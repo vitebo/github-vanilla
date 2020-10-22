@@ -10,4 +10,9 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
+  rules: {
+    'import/no-extraneous-dependencies': ['error', {
+      devDependencies: ['src/server.js', 'webpack.config.js'],
+    }],
+  },
 };
