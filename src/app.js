@@ -1,1 +1,3 @@
-console.log('application initialized');
+export default function app() {
+  return 'application initialized';
+}
