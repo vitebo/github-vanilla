@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
+    es2020: true,
   },
   extends: [
     'airbnb-base',
@@ -15,4 +15,14 @@ module.exports = {
       devDependencies: ['src/server.js', 'webpack.config.js'],
     }],
   },
+  overrides: [
+    {
+      files: ['**/tests/**/*.js'],
+      plugins: ['jest'],
+      extends: ['plugin:jest/all'],
+      env: {
+        'jest/globals': true,
+      },
+    },
+  ],
 };
