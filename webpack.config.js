@@ -7,7 +7,7 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   devtool: 'inline-source-map',
   entry: {
-    app: './app.js',
+    app: ['./app.js', './styles/theme.css'],
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -22,12 +22,26 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: [/node_modules/],
-        use: [{ loader: 'babel-loader' }],
+        use: ['babel-loader'],
+      },
+      {
+        test: /\.html$/,
+        use: ['html-loader'],
+      },
+      {
+        test: /\.style\.css$/,
+        use: ['css-loader'],
+      },
+      {
+        test: /(?<!\.style)\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+    }),
   ],
 };
