@@ -12,7 +12,7 @@ module.exports = {
   },
   rules: {
     'import/no-extraneous-dependencies': ['error', {
-      devDependencies: ['src/server.js', 'webpack.config.js'],
+      devDependencies: ['src/server.js', 'webpack.config.js', 'tests/setup/setup-after-env.js'],
     }],
   },
   overrides: [

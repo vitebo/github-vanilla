@@ -1,16 +1,14 @@
 import searchUser from '../../src/services/search-user';
 
 function mockFetch(data = {}) {
-  jest.spyOn(global, 'fetch').mockResolvedValue({
-    json: () => Promise.resolve({
-      avatar_url: 'https://avatars2.githubusercontent.com/u/19560693?v=4',
-      html_url: 'https://github.com/vitebo',
-      public_repos: 25,
-      followers: 40,
-      following: 43,
-      ...data,
-    }),
-  });
+  jest.spyOn(global, 'fetch').mockResolvedValue(new Response(JSON.stringify({
+    avatar_url: 'https://avatars2.githubusercontent.com/u/19560693?v=4',
+    html_url: 'https://github.com/vitebo',
+    public_repos: 25,
+    followers: 40,
+    following: 43,
+    ...data,
+  })));
 }
 
 describe('search-user', () => {
@@ -36,7 +34,7 @@ describe('search-user', () => {
 
   it('reject the promise with correct error when the request fails', async () => {
     expect.assertions(1);
-    jest.spyOn(global, 'fetch').mockRejectedValue();
+    jest.spyOn(global, 'fetch').mockRejectedValue(new Response());
     await searchUser({ username: 'vitebo' }).catch(({ message }) => {
       expect(message).toStrictEqual('error searching user');
     });

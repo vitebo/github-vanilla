@@ -1,14 +1,12 @@
 import searchStarredRepos from '../../src/services/search-starred-repos';
 
 function mockFetch() {
-  jest.spyOn(global, 'fetch').mockResolvedValue({
-    json: () => Promise.resolve([
-      {
-        name: 'github-vanilla',
-        html_url: 'https://github.com/vitebo/github-vanilla',
-      },
-    ]),
-  });
+  jest.spyOn(global, 'fetch').mockResolvedValue(new Response(JSON.stringify([
+    {
+      name: 'github-vanilla',
+      html_url: 'https://github.com/vitebo/github-vanilla',
+    },
+  ])));
 }
 
 describe('search-starred-repos', () => {
@@ -33,7 +31,7 @@ describe('search-starred-repos', () => {
 
   it('reject the promise with correct error when the request fails', async () => {
     expect.assertions(1);
-    jest.spyOn(global, 'fetch').mockRejectedValue();
+    jest.spyOn(global, 'fetch').mockRejectedValue(new Response());
     await searchStarredRepos({ username: 'vitebo' }).catch(({ message }) => {
       expect(message).toStrictEqual('error searching starred repos');
     });
