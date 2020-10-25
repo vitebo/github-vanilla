@@ -1,0 +1,74 @@
+:root {
+  /*----------------------------*\
+    Theme
+  \*----------------------------*/
+  /*
+  COLORS
+  SPACE
+  FONT
+  BORDER WIDTH
+  BORDER RADIUS
+  TRANSITION
+  */
+
+  /*----------------------------*\
+    COLORS
+  \*----------------------------*/
+  --color-primary: #9ed1ad;
+  --color-neutral-black: #000;
+  --color-neutral-white: #fff;
+
+  --color-font-primary: #022c11;
+  --color-font-neutral: #242a2e;
+  --color-font-inverted: #fff;
+
+  --color-background-primary: #ebf6ee;
+  --color-background-neutral-light: #fff;
+  --color-background-neutral-dark: #000;
+
+  /*----------------------------*\
+    SPACE
+  \*----------------------------*/
+  --space-nano: 1px;
+  --space-micro: 2px;
+  --space-extra-small: 4px;
+  --space-small: 8px;
+  --space-medium: 16px;
+  --space-large: 24px;
+  --space-extra-large: 32px;
+  --space-jumbo: 40px;
+
+  /*----------------------------*\
+    FONT
+  \*----------------------------*/
+  --font-family-default: "system-ui", sans-serif;
+
+  --font-weight-light: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-default: var(--font-weight-light);
+
+  --font-size-medium: 1rem;
+  --font-size-large: calc(var(--font-size-medium)*1.2);
+
+  /*----------------------------*\
+    BORDER WIDTH
+  \*----------------------------*/
+  --border-size-width-small: 1px;
+  --border-size-width-medium: 2px;
+  --border-size-width-large: 4px;
+
+  /*----------------------------*\
+    BORDER RADIUS
+  \*----------------------------*/
+  --border-radius-none: 0;
+  --border-radius-small: 2px;
+  --border-radius-medium: 4px;
+  --border-radius-large: 8px;
+  --border-radius-circle: 50%;
+
+  /*----------------------------*\
+    TRANSITION
+  \*----------------------------*/
+  --transition-speed: 300ms;
+}
