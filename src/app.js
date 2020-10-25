@@ -1,6 +1,8 @@
 import makeServer from './server';
+import defineBButton from './components/b-button';
 
 makeServer();
+defineBButton();
 
 function app() {
   fetch('https://api.github.com/users/vitebo/repos')

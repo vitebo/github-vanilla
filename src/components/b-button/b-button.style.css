@@ -1,0 +1,27 @@
+:host {
+  --b-button-primary-color: var(--color-primary);
+  --b-button-secondary-color: var(--color-neutral-white);
+
+  all: initial;
+  display: inline-block;
+  contain: content;
+}
+
+.b-button {
+  cursor: pointer;
+  background-color:  var(--b-button-secondary-color);
+  border: var(--border-size-width-medium) solid var(--b-button-primary-color);
+  padding: var(--space-extra-small) var(--space-small);
+  color: var(--b-button-primary-color);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-large);
+  border-radius: var(--border-radius-medium);
+  transition-property: background-color, color;
+  transition-duration: var(--transition-speed);
+}
+
+.b-button:hover,
+.b-button:focus {
+  background-color: var(--b-button-primary-color);
+  color: var(--b-button-secondary-color);
+}
