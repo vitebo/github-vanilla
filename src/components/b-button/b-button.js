@@ -1,18 +1,14 @@
+import componentSetup from '../../utils/component-setup';
 import html from './b-button.html';
-import styles from './b-button.style.css';
-
-const template = document.createElement('template');
-template.innerHTML = html;
-
-const sheet = new CSSStyleSheet();
-sheet.replaceSync(styles);
+import css from './b-button.style.css';
 
 class BButton extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
-    this.shadowRoot.adoptedStyleSheets = [sheet];
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
+    const { styleSheet, template } = componentSetup(html, css);
+    this.shadowRoot.adoptedStyleSheets = styleSheet;
+    this.shadowRoot.appendChild(template);
   }
 }
 
