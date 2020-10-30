@@ -1,0 +1,13 @@
+:host {
+  all: initial;
+  display: inline-block;
+  contain: content;
+}
+
+.b-title {
+  color: var(--color-font-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-medium);
+  font-family: var(--font-family-default);
+  margin: 0;
+}
