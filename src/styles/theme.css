@@ -48,6 +48,9 @@
   --font-weight-bold: 700;
   --font-weight-default: var(--font-weight-light);
 
+  --font-line-height-medium: 1.5;
+  --font-line-height-default: var(--font-line-height-medium);
+
   --font-size-medium: 1rem;
   --font-size-large: calc(var(--font-size-medium)*1.2);
 

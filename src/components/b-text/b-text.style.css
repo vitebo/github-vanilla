@@ -10,4 +10,5 @@
   font-size: var(--font-size-medium);
   font-family: var(--font-family-default);
   margin: 0;
+  line-height: var(--font-line-height-default);
 }

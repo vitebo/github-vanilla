@@ -1,14 +1,22 @@
 :host {
   all: initial;
   display: inline-block;
-  contain: content;
 }
 
-.b-title {
+.b-link {
   color: var(--color-font-primary);
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-medium);
   font-family: var(--font-family-default);
-  margin: 0;
   line-height: var(--font-line-height-default);
+  vertical-align: bottom;
+}
+
+.b-link:hover,
+.b-link:focus {
+  color: var(--color-primary);
+}
+
+.b-link--upper-case {
+  text-transform: uppercase;
 }
