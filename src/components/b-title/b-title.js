@@ -17,8 +17,9 @@ class BTitle extends HTMLElement {
     this.shadowRoot.appendChild(template);
   }
 
-  attributeChangedCallback(name, _oldValue, newValue) {
-    if (name === 'tag') this.updateNodeName(newValue);
+  attributeChangedCallback(attribute, _oldValue, newValue) {
+    shouldBeOneOf(BTitle.observedAttributes, attribute);
+    if (attribute === 'tag') this.updateNodeName(newValue);
   }
 
   updateNodeName(newTagName) {

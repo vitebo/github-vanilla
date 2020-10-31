@@ -17,8 +17,9 @@ class BText extends HTMLElement {
     this.shadowRoot.appendChild(template);
   }
 
-  attributeChangedCallback(name, _oldValue, newValue) {
-    if (name === 'tag') this.updateNodeName(newValue);
+  attributeChangedCallback(attribute, _oldValue, newValue) {
+    shouldBeOneOf(BText.observedAttributes, attribute);
+    if (attribute === 'tag') this.updateNodeName(newValue);
   }
 
   updateNodeName(newTagName) {

@@ -1,0 +1,12 @@
+:host {
+  --b-avatar-size: 160px;
+
+  all: initial;
+  display: inline-block;
+  contain: content;
+}
+
+.b-avatar {
+  border-radius: var(--border-radius-circle);
+  width: var(--b-avatar-size);
+}
