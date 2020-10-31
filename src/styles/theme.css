@@ -9,6 +9,7 @@
   BORDER WIDTH
   BORDER RADIUS
   TRANSITION
+  ELEVATION
   */
 
   /*----------------------------*\
@@ -74,4 +75,17 @@
     TRANSITION
   \*----------------------------*/
   --transition-speed: 300ms;
+
+  /*----------------------------*\
+    ELEVATION
+  \*----------------------------*/
+  --shadow-elevation-00: 0px 0px 0px 1px rgba(19,23,26,0.16);
+
+  --shadow-elevation-up-10: 0px 0px 1px 0px rgba(19,23,26,0.32),0px -4px 8px -4px rgba(19,23,26,0.24);
+  --shadow-elevation-up-20: 0px 0px 1px 0px rgba(19,23,26,0.32),0px -8px 16px -8px rgba(19,23,26,0.24);
+  --shadow-elevation-up-30: 0px 0px 1px 0px rgba(19,23,26,0.32),0px -16px 32px -16px rgba(19,23,26,0.24);
+
+  --shadow-elevation-down-10: 0px 0px 1px 0px rgba(19,23,26,0.32),0px 4px 8px -4px rgba(19,23,26,0.24);
+  --shadow-elevation-down-20: 0px 0px 1px 0px rgba(19,23,26,0.32),0px 8px 16px -8px rgba(19,23,26,0.24);
+  --shadow-elevation-down-30: 0px 0px 1px 0px rgba(19,23,26,0.32),0px 16px 32px -16px rgba(19,23,26,0.24);
 }

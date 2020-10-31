@@ -1,0 +1,11 @@
+:host {
+  all: initial;
+  display: inline-block;
+}
+
+.b-card {
+  border-radius: var(--border-radius-small);
+  background-color: var(--color-background-neutral-light);
+  box-shadow: var(--shadow-elevation-down-10);
+  padding: var(--space-extra-large);
+}

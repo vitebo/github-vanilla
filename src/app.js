@@ -4,6 +4,7 @@ import defineBText from './components/b-text';
 import defineBTtitle from './components/b-title';
 import defineBAvatar from './components/b-avatar';
 import defineBLink from './components/b-link';
+import defineBCard from './components/b-card';
 
 makeServer();
 defineBButton();
@@ -11,6 +12,7 @@ defineBText();
 defineBTtitle();
 defineBAvatar();
 defineBLink();
+defineBCard();
 
 function app() {
   fetch('https://api.github.com/users/vitebo/repos')
