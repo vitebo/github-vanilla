@@ -43,7 +43,13 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
+      title: 'github vanilla',
       template: 'index.html',
+      hash: true,
+      meta: {
+        viewport: 'width=device-width, minimum-scale=1.0, maximum-scale=1.0',
+        charset: 'UTF-8',
+      },
     }),
   ],
 };
