@@ -1,7 +1,6 @@
 :host {
   all: initial;
-  display: block;
-  width: 100%;
+  display: inline-block;
 }
 
 .card-profile {

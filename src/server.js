@@ -1,17 +1,45 @@
-import { createServer } from 'miragejs';
+import { createServer, Model } from 'miragejs';
 
 export default function makeServer({ environment = 'development' } = {}) {
   return createServer({
     environment,
-    routes() {
-      this.urlPrefix = 'https://api.github.com';
-      this.get('users/:username', () => ({
+    models: {
+      user: Model,
+      repo: Model,
+    },
+    seeds(server) {
+      server.create('user', {
+        username: 'vitebo',
         avatar_url: 'https://avatars2.githubusercontent.com/u/19560693?v=4',
         html_url: 'https://github.com/vitebo',
         public_repos: 25,
         followers: 40,
         following: 43,
-      }));
+      });
+      server.create('user', {
+        username: 'AkinoLucas',
+        avatar_url: 'https://avatars1.githubusercontent.com/u/8320256?v=4',
+        html_url: 'https://github.com/AkinoLucas',
+        public_repos: 25,
+        followers: 40,
+        following: 43,
+      });
+      server.create('user', {
+        username: 'linspw',
+        avatar_url: 'https://avatars2.githubusercontent.com/u/43552865?v=4',
+        html_url: 'https://github.com/linspw',
+        public_repos: 25,
+        followers: 40,
+        following: 43,
+      });
+    },
+    routes() {
+      this.urlPrefix = 'https://api.github.com';
+      this.get('users/:username', (schema, request) => {
+        const { username } = request.params;
+        const { attrs } = schema.findBy('user', { username });
+        return attrs;
+      });
       this.get('users/:username/repos', () => [
         {
           name: 'github-explorer',

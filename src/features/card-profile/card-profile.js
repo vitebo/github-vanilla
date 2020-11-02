@@ -6,6 +6,7 @@ import setupButton from './setup-button';
 import createList from './create-list';
 import html from './card-profile.html';
 import css from './card-profile.style.css';
+import tokens from '../../styles/tokens.css';
 
 class CardProfile extends HTMLElement {
   static get observedAttributes() {
@@ -16,6 +17,11 @@ class CardProfile extends HTMLElement {
     super();
     this.attachShadow({ mode: 'open' });
     const { styleSheet, template } = componentSetup(html, css);
+
+    const styleSheetToken = new CSSStyleSheet();
+    styleSheetToken.replaceSync(tokens);
+    styleSheet.push(styleSheetToken);
+
     this.shadowRoot.adoptedStyleSheets = styleSheet;
     this.shadowRoot.appendChild(template);
   }

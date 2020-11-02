@@ -9,7 +9,7 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   devtool: 'inline-source-map',
   entry: {
-    app: ['./app.js', './styles/theme.css'],
+    app: ['./app.js', './styles/global.css'],
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
