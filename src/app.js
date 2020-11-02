@@ -8,7 +8,9 @@ import defineBCard from './components/b-card';
 import defineBList from './components/b-list';
 import defineCardProfile from './features/card-profile';
 
-makeServer();
+if (process.env.NODE_ENV === 'development') {
+  makeServer();
+}
 
 function app() {
   defineBButton();
@@ -19,7 +21,6 @@ function app() {
   defineBCard();
   defineBList();
   defineCardProfile();
-  return 'application initialized';
 }
 
 export default app();

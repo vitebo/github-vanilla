@@ -38,7 +38,11 @@ module.exports = {
         test: /(?<!\.style)\.css$/,
         use: ['style-loader', 'css-loader'],
       },
-    ],
+      (isProd && {
+        test: /node_modules\/miragejs\//,
+        use: 'null-loader',
+      }),
+    ].filter((rule) => rule),
   },
   plugins: [
     new CleanWebpackPlugin(),
