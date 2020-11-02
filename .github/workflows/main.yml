@@ -1,42 +1,43 @@
-name: nodejs
+name: Continuous Integration
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  lint:
+  lint-and-test:
     runs-on: ubuntu-latest
+    env:
+      CI: true
     strategy:
       matrix:
         node-version: [14.15.0]
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: build and lint
-      run: |
-        yarn install --frozen-lockfile
-        yarn lint
-        yarn test
-      env:
-        CI: true
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: yarn install --frozen-lockfile
+      - run: yarn lint
+      - run: yarn test
   deploy:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [14.15.0]
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: build and deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v2
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BASE_BRANCH: main
-        BRANCH: gh-pages
-        FOLDER: dist
-        BUILD_SCRIPT: yarn install --frozen-lockfile && yarn build
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: build and deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BASE_BRANCH: main
+          BRANCH: gh-pages
+          FOLDER: dist
+          BUILD_SCRIPT: yarn install --frozen-lockfile && yarn build
