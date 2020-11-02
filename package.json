@@ -3,6 +3,7 @@
   "scripts": {
     "commit": "cz",
     "serve": "webpack serve",
+    "build": "NODE_ENV=production webpack",
     "lint": "eslint .",
     "test": "jest"
   },
