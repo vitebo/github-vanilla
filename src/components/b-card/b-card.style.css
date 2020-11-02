@@ -4,8 +4,8 @@
 }
 
 .b-card {
-  border-radius: var(--border-radius-small);
-  background-color: var(--color-background-neutral-light);
-  box-shadow: var(--shadow-elevation-down-10);
   padding: var(--space-extra-large);
+  background-color: var(--color-background-neutral-light);
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--shadow-elevation-down-10);
 }

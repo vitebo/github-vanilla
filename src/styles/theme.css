@@ -1,7 +1,8 @@
 :root {
-  /*----------------------------*\
+  /* ----------------------------*\
     Theme
-  \*----------------------------*/
+  \*---------------------------- */
+
   /*
   COLORS
   SPACE
@@ -12,24 +13,22 @@
   ELEVATION
   */
 
-  /*----------------------------*\
+  /* ----------------------------*\
     COLORS
-  \*----------------------------*/
+  \*---------------------------- */
   --color-primary: #7f5fb2;
   --color-neutral-black: #000;
   --color-neutral-white: #fff;
-
   --color-font-primary: #022c11;
   --color-font-neutral: #242a2e;
   --color-font-inverted: #fff;
-
   --color-background-primary: #e6d4fe;
   --color-background-neutral-light: #fff;
   --color-background-neutral-dark: #000;
 
-  /*----------------------------*\
+  /* ----------------------------*\
     SPACE
-  \*----------------------------*/
+  \*---------------------------- */
   --space-nano: 1px;
   --space-micro: 2px;
   --space-extra-small: 4px;
@@ -39,54 +38,49 @@
   --space-extra-large: 32px;
   --space-jumbo: 40px;
 
-  /*----------------------------*\
+  /* ----------------------------*\
     FONT
-  \*----------------------------*/
+  \*---------------------------- */
   --font-family-default: "system-ui", sans-serif;
-
   --font-weight-light: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
   --font-weight-default: var(--font-weight-light);
-
   --font-line-height-medium: 1.5;
   --font-line-height-high: 2;
   --font-line-height-default: var(--font-line-height-medium);
-
   --font-size-medium: 1rem;
-  --font-size-large: calc(var(--font-size-medium)*1.2);
+  --font-size-large: calc(var(--font-size-medium) * 1.2);
 
-  /*----------------------------*\
+  /* ----------------------------*\
     BORDER WIDTH
-  \*----------------------------*/
+  \*---------------------------- */
   --border-size-width-small: 1px;
   --border-size-width-medium: 2px;
   --border-size-width-large: 4px;
 
-  /*----------------------------*\
+  /* ----------------------------*\
     BORDER RADIUS
-  \*----------------------------*/
+  \*---------------------------- */
   --border-radius-none: 0;
   --border-radius-small: 2px;
   --border-radius-medium: 4px;
   --border-radius-large: 8px;
   --border-radius-circle: 50%;
 
-  /*----------------------------*\
+  /* ----------------------------*\
     TRANSITION
-  \*----------------------------*/
+  \*---------------------------- */
   --transition-speed: 300ms;
 
-  /*----------------------------*\
+  /* ----------------------------*\
     ELEVATION
-  \*----------------------------*/
-  --shadow-elevation-00: 0px 0px 0px 1px rgba(19,23,26,0.16);
-
-  --shadow-elevation-up-10: 0px 0px 1px 0px rgba(19,23,26,0.32),0px -4px 8px -4px rgba(19,23,26,0.24);
-  --shadow-elevation-up-20: 0px 0px 1px 0px rgba(19,23,26,0.32),0px -8px 16px -8px rgba(19,23,26,0.24);
-  --shadow-elevation-up-30: 0px 0px 1px 0px rgba(19,23,26,0.32),0px -16px 32px -16px rgba(19,23,26,0.24);
-
-  --shadow-elevation-down-10: 0px 0px 1px 0px rgba(19,23,26,0.32),0px 4px 8px -4px rgba(19,23,26,0.24);
-  --shadow-elevation-down-20: 0px 0px 1px 0px rgba(19,23,26,0.32),0px 8px 16px -8px rgba(19,23,26,0.24);
-  --shadow-elevation-down-30: 0px 0px 1px 0px rgba(19,23,26,0.32),0px 16px 32px -16px rgba(19,23,26,0.24);
+  \*---------------------------- */
+  --shadow-elevation-00: 0 0 0 1px rgba(19, 23, 26, 0.16);
+  --shadow-elevation-up-10: 0 0 1px 0 rgba(19, 23, 26, 0.32), 0 -4px 8px -4px rgba(19, 23, 26, 0.24);
+  --shadow-elevation-up-20: 0 0 1px 0 rgba(19, 23, 26, 0.32), 0 -8px 16px -8px rgba(19, 23, 26, 0.24);
+  --shadow-elevation-up-30: 0 0 1px 0 rgba(19, 23, 26, 0.32), 0 -16px 32px -16px rgba(19, 23, 26, 0.24);
+  --shadow-elevation-down-10: 0 0 1px 0 rgba(19, 23, 26, 0.32), 0 4px 8px -4px rgba(19, 23, 26, 0.24);
+  --shadow-elevation-down-20: 0 0 1px 0 rgba(19, 23, 26, 0.32), 0 8px 16px -8px rgba(19, 23, 26, 0.24);
+  --shadow-elevation-down-30: 0 0 1px 0 rgba(19, 23, 26, 0.32), 0 16px 32px -16px rgba(19, 23, 26, 0.24);
 }

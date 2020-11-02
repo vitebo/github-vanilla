@@ -4,13 +4,14 @@
 }
 
 .b-list {
-  list-style: none;
   padding-left: 0;
   margin: 0;
+  list-style: none;
 }
 
 .b-list__item {
   --font-line-height-default: var(--font-line-height-high);
+
   display: flex;
   align-items: center;
   background-color: var(--color-background-primary);

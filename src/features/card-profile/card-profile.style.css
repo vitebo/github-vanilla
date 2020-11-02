@@ -11,29 +11,30 @@
 .card-profile__wrapper {
   display: grid;
   column-gap: var(--space-small);
-  row-gap: var(--space-small);
-  grid-template-columns: auto 1fr;
-  grid-template-rows: repeat(2, auto) 1fr;
   grid-template-areas:
     'avatar user-info'
     'avatar actions'
     'list   list';
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(2, auto) 1fr;
+  row-gap: var(--space-small);
 }
 
 .card-profile__avatar {
-  grid-area: avatar;
   margin-right: var(--space-large);
+  grid-area: avatar;
 }
 
 .card-profile__link-profile {
   --b-link-padding: var(--space-micro) var(--space-small);
+
   margin-top: var(--space-small);
 }
 
 .card-profile__user-info {
-  grid-area: user-info;
   display: flex;
   flex-direction: column;
+  grid-area: user-info;
 }
 
 .card-profile__user-info-line {
@@ -41,11 +42,10 @@
 }
 
 .card-profile__actions {
-  grid-area: actions;
-  align-self: end;
   display: flex;
+  align-self: end;
+  grid-area: actions;
 }
-
 
 .card-profile__action-button {
   flex-grow: 1;
@@ -56,8 +56,8 @@
 }
 
 .card-profile__list {
-  grid-area: list;
   margin-top: var(--space-large);
+  grid-area: list;
 }
 
 .card-profile__list-title {
@@ -66,13 +66,14 @@
 
 .card-profile__list-content {
   max-height: 240px;
-  overflow-y: auto;
   padding: var(--space-micro);
+  overflow-y: auto;
 }
 
 .card-profile__list-item {
   --b-link-text-indent: var(--space-medium);
   --b-link-width: 100%;
+
   display: block;
   width: var(--b-link-width);
 }

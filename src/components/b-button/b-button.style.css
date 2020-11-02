@@ -8,18 +8,18 @@
 }
 
 .b-button {
-  cursor: pointer;
-  background-color:  var(--b-button-secondary-color);
-  border: var(--border-size-width-medium) solid var(--b-button-primary-color);
-  padding: var(--space-extra-small) var(--space-small);
-  font-family: var(--font-family-default);
-  color: var(--b-button-primary-color);
-  font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-large);
-  border-radius: var(--border-radius-medium);
-  transition-property: background-color, color;
-  transition-duration: var(--transition-speed);
   width: 100%;
+  padding: var(--space-extra-small) var(--space-small);
+  border: var(--border-size-width-medium) solid var(--b-button-primary-color);
+  background-color: var(--b-button-secondary-color);
+  border-radius: var(--border-radius-medium);
+  color: var(--b-button-primary-color);
+  cursor: pointer;
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-medium);
+  transition-duration: var(--transition-speed);
+  transition-property: background-color, color;
 }
 
 .b-button:hover,

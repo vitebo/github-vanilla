@@ -9,16 +9,16 @@
 }
 
 .b-link {
-  color: var(--color-font-primary);
-  font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-medium);
-  font-family: var(--font-family-default);
-  line-height: var(--font-line-height-default);
-  vertical-align: bottom;
-  width: var(--b-link-width);
   display: inline-block;
-  text-indent: var(--b-link-text-indent);
+  width: var(--b-link-width);
   padding: var(--b-link-padding);
+  color: var(--color-font-primary);
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--font-line-height-default);
+  text-indent: var(--b-link-text-indent);
+  vertical-align: bottom;
 }
 
 .b-link:hover,
