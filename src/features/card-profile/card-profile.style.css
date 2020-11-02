@@ -22,11 +22,6 @@
 
 .card-profile__avatar {
   grid-area: avatar;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   margin-right: var(--space-large);
 }
 
@@ -67,6 +62,12 @@
 
 .card-profile__list-title {
   margin-bottom: var(--space-medium);
+}
+
+.card-profile__list-content {
+  max-height: 240px;
+  overflow-y: auto;
+  padding: var(--space-micro);
 }
 
 .card-profile__list-item {

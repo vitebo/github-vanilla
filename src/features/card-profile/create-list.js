@@ -11,6 +11,7 @@ function createLinkItem(repo, index) {
 
 export default async function createList(repos) {
   const list = document.createElement('b-list');
+  list.classList.add('card-profile__list-content');
   repos
     .map(createLinkItem)
     .forEach((linkItem) => list.appendChild(linkItem));
