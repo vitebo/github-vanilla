@@ -3,10 +3,22 @@
 
   all: initial;
   display: inline-block;
-  contain: content;
 }
 
 .b-avatar {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.b-avatar__image {
   border-radius: var(--border-radius-circle);
   width: var(--b-avatar-size);
+}
+
+.b-avatar-username {
+  --b-link-padding: var(--space-micro) var(--space-small);
+  margin-top: var(--space-small);
 }

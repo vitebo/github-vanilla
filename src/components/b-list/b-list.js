@@ -1,7 +1,6 @@
 import componentSetup from '../../utils/component-setup';
 import createNodeFactory from '../../utils/create-node-factory';
 import createNodes from '../../utils/create-nodes';
-import replaceChild from '../../utils/replace-child';
 import html from './b-list.html';
 import css from './b-list.style.css';
 
@@ -20,7 +19,7 @@ class BList extends HTMLElement {
       cssClass: 'b-list__item',
     });
     const $listItems = createNodes(listItemFactory, this.slotNames);
-    replaceChild(this.shadowRoot.firstChild, $listItems);
+    this.shadowRoot.firstChild.replaceChildren($listItems);
   }
 
   get slotNames() {

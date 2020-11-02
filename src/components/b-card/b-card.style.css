@@ -1,6 +1,6 @@
 :host {
   all: initial;
-  display: inline-block;
+  display: block;
 }
 
 .b-card {

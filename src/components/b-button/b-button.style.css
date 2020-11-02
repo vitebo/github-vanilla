@@ -14,11 +14,12 @@
   padding: var(--space-extra-small) var(--space-small);
   font-family: var(--font-family-default);
   color: var(--b-button-primary-color);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-medium);
   font-size: var(--font-size-large);
   border-radius: var(--border-radius-medium);
   transition-property: background-color, color;
   transition-duration: var(--transition-speed);
+  width: 100%;
 }
 
 .b-button:hover,

@@ -7,14 +7,12 @@
   list-style: none;
   padding-left: 0;
   margin: 0;
-  border-radius: var(--border-radius-small);
-  overflow: hidden;
 }
 
 .b-list__item {
+  --font-line-height-default: var(--font-line-height-high);
   display: flex;
   align-items: center;
-  padding: var(--space-extra-small) var(--space-medium);
   background-color: var(--color-background-primary);
 }
 

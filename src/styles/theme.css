@@ -15,7 +15,7 @@
   /*----------------------------*\
     COLORS
   \*----------------------------*/
-  --color-primary: #9ed1ad;
+  --color-primary: #7f5fb2;
   --color-neutral-black: #000;
   --color-neutral-white: #fff;
 
@@ -23,7 +23,7 @@
   --color-font-neutral: #242a2e;
   --color-font-inverted: #fff;
 
-  --color-background-primary: #d2eedf;
+  --color-background-primary: #e6d4fe;
   --color-background-neutral-light: #fff;
   --color-background-neutral-dark: #000;
 
@@ -50,6 +50,7 @@
   --font-weight-default: var(--font-weight-light);
 
   --font-line-height-medium: 1.5;
+  --font-line-height-high: 2;
   --font-line-height-default: var(--font-line-height-medium);
 
   --font-size-medium: 1rem;

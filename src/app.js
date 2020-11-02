@@ -6,22 +6,19 @@ import defineBAvatar from './components/b-avatar';
 import defineBLink from './components/b-link';
 import defineBCard from './components/b-card';
 import defineBList from './components/b-list';
+import defineCardProfile from './features/card-profile';
 
 makeServer();
-defineBButton();
-defineBText();
-defineBTtitle();
-defineBAvatar();
-defineBLink();
-defineBCard();
-defineBList();
 
 function app() {
-  fetch('https://api.github.com/users/vitebo/repos')
-    .then((response) => response.json())
-    .then((response) => {
-      console.log(response);
-    });
+  defineBButton();
+  defineBText();
+  defineBTtitle();
+  defineBAvatar();
+  defineBLink();
+  defineBCard();
+  defineBList();
+  defineCardProfile();
   return 'application initialized';
 }
 

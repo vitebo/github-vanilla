@@ -1,6 +1,11 @@
 :host {
+  --b-link-text-indent: 0;
+  --b-link-padding: 0;
+  --b-link-width: auto;
+
   all: initial;
   display: inline-block;
+  content: contain;
 }
 
 .b-link {
@@ -10,6 +15,10 @@
   font-family: var(--font-family-default);
   line-height: var(--font-line-height-default);
   vertical-align: bottom;
+  width: var(--b-link-width);
+  display: inline-block;
+  text-indent: var(--b-link-text-indent);
+  padding: var(--b-link-padding);
 }
 
 .b-link:hover,
