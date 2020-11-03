@@ -13,7 +13,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].min.js',
+    filename: '[name].min.js',
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),

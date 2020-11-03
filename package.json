@@ -1,5 +1,13 @@
 {
+  "name": "@vitebo/github-vanilla",
+  "version": "0.1.2",
+  "description": "a simple web component with information from the github user",
   "license": "MIT",
+  "author": "Vitebo",
+  "main": "src/app.min.js",
+  "files": [
+    "dist/*.js"
+  ],
   "scripts": {
     "commit": "cz",
     "serve": "webpack serve",
@@ -38,5 +46,16 @@
     "webpack": "^5.1.3",
     "webpack-cli": "^4.1.0",
     "webpack-dev-server": "^3.11.0"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitebo/github-vanilla.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vitebo/github-vanilla/issues"
+  },
+  "homepage": "https://github.com/vitebo/github-vanilla#readme"
 }
