@@ -1,14 +1,27 @@
 import componentSetup from '../../utils/component-setup';
-import html from './b-button.html';
 import css from './b-button.style.css';
 
 class BButton extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
-    const { styleSheet, template } = componentSetup(html, css);
+    const { styleSheet } = componentSetup(null, css);
     this.shadowRoot.adoptedStyleSheets = styleSheet;
-    this.shadowRoot.appendChild(template);
+  }
+
+  connectedCallback() {
+    this.setupButton();
+  }
+
+  setupButton() {
+    const button = document.createElement('button');
+    button.classList.add('b-button');
+    button.appendChild(BButton.setupSlot());
+    this.shadowRoot.appendChild(button);
+  }
+
+  static setupSlot() {
+    return document.createElement('slot');
   }
 }
 
