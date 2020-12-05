@@ -1,7 +1,6 @@
 import componentSetup from '../../utils/component-setup';
 import updateNodeName from '../../utils/update-node-name';
 import shouldBeOneOf from '../../validators/should-be-one-of';
-import html from './b-card.html';
 import css from './b-card.style.css';
 
 class BCard extends HTMLElement {
@@ -12,14 +11,32 @@ class BCard extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
-    const { styleSheet, template } = componentSetup(html, css);
+    const { styleSheet } = componentSetup(null, css);
     this.shadowRoot.adoptedStyleSheets = styleSheet;
-    this.shadowRoot.appendChild(template);
+  }
+
+  connectedCallback() {
+    this.setupCard();
+  }
+
+  setupCard() {
+    const card = document.createElement(this.tag);
+    card.classList.add('b-card');
+    card.appendChild(BCard.setupSlot());
+    this.shadowRoot.appendChild(card);
+  }
+
+  static setupSlot() {
+    return document.createElement('slot');
   }
 
   attributeChangedCallback(attribute) {
     shouldBeOneOf(BCard.observedAttributes, attribute);
-    this.updateNodeName();
+    switch (attribute) {
+      case 'tag':
+        return this.updateNodeName();
+      default: return null;
+    }
   }
 
   updateNodeName() {
@@ -29,7 +46,7 @@ class BCard extends HTMLElement {
   }
 
   get tag() {
-    return this.getAttribute('tag');
+    return this.getAttribute('tag') || 'div';
   }
 }
 
