@@ -1,0 +1,43 @@
+import { html, css, LitElement } from 'lit-element';
+
+export class BButton extends LitElement {
+  static styles = css`
+    :host {
+      --b-button-primary-color: var(--color-primary);
+      --b-button-secondary-color: var(--color-neutral-white);
+
+      all: initial;
+      display: inline-block;
+      contain: content;
+    }
+
+    .b-button {
+      width: 100%;
+      padding: var(--space-extra-small) var(--space-small);
+      border: var(--border-size-width-medium) solid var(--b-button-primary-color);
+      background-color: var(--b-button-secondary-color);
+      border-radius: var(--border-radius-medium);
+      color: var(--b-button-primary-color);
+      cursor: pointer;
+      font-family: var(--font-family-default);
+      font-size: var(--font-size-large);
+      font-weight: var(--font-weight-medium);
+      transition-duration: var(--transition-speed);
+      transition-property: background-color, color;
+    }
+
+    .b-button:hover,
+    .b-button:focus {
+      background-color: var(--b-button-primary-color);
+      color: var(--b-button-secondary-color);
+    }
+  `;
+
+  render() {
+    return html`
+      <button class='b-button'>
+        <slot></slot>
+      </button>
+    `;
+  }
+}
