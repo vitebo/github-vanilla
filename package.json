@@ -1,61 +1,80 @@
 {
-  "name": "@vitebo/github-vanilla",
-  "version": "0.1.2",
-  "description": "a simple web component with information from the github user",
+  "name": "github-card-profile",
+  "version": "0.0.0",
+  "description": "Webcomponent github-card-profile following open-wc recommendations",
+  "author": "github-card-profile",
   "license": "MIT",
-  "author": "Vitebo",
-  "main": "src/app.min.js",
-  "files": [
-    "dist/*.js"
-  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "scripts": {
-    "commit": "cz",
-    "serve": "webpack serve",
-    "build": "NODE_ENV=production webpack",
-    "lint": "yarn lint:css && yarn lint:js",
-    "lint:js": "eslint .",
-    "lint:css": "stylelint **/*.css",
-    "test": "jest"
+    "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
+    "build": "tsc",
+    "prepublish": "tsc",
+    "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
+    "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
+    "test": "tsc && wtr --coverage",
+    "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
+    "storybook": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds -c .storybook/server.mjs\"",
+    "storybook:build": "tsc && build-storybook"
+  },
+  "dependencies": {
+    "lit-html": "^1.3.0",
+    "lit-element": "^2.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.3",
-    "@babel/preset-env": "^7.12.1",
-    "@types/jest": "^26.0.15",
-    "babel-jest": "^26.6.0",
-    "babel-loader": "^8.1.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-register": "^6.26.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "css-loader": "^5.0.0",
-    "cz-conventional-changelog": "3.3.0",
-    "cz-emoji": "^1.2.2",
-    "eslint": "^7.2.0",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.21.2",
-    "eslint-plugin-jest": "^24.1.0",
-    "html-loader": "^1.3.2",
-    "html-webpack-plugin": "^4.5.0",
-    "isomorphic-fetch": "^3.0.0",
-    "jest": "^26.6.0",
-    "miragejs": "^0.1.41",
-    "null-loader": "^4.0.1",
-    "style-loader": "^2.0.0",
-    "stylelint": "^13.7.2",
-    "stylelint-config-idiomatic-order": "^8.1.0",
-    "stylelint-config-standard": "^20.0.0",
-    "webpack": "^5.1.3",
-    "webpack-cli": "^4.1.0",
-    "webpack-dev-server": "^3.11.0"
+    "@web/dev-server": "^0.1.5",
+    "concurrently": "^5.3.0",
+    "typescript": "^4.1.3",
+    "tslib": "^2.1.0",
+    "eslint": "^7.18.0",
+    "@open-wc/eslint-config": "^4.2.0",
+    "@typescript-eslint/parser": "^4.14.1",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "prettier": "^2.2.1",
+    "eslint-config-prettier": "^7.2.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.3",
+    "@web/test-runner": "^0.12.7",
+    "@open-wc/testing": "^2.5.32",
+    "@web/dev-server-storybook": "^0.3.4"
   },
-  "directories": {
-    "test": "tests"
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+      "@open-wc/eslint-config",
+      "eslint-config-prettier"
+    ],
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "rules": {
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "error"
+      ],
+      "import/no-unresolved": "off",
+      "import/extensions": [
+        "error",
+        "always",
+        {
+          "ignorePackages": true
+        }
+      ]
+    }
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vitebo/github-vanilla.git"
+  "prettier": {
+    "singleQuote": true,
+    "arrowParens": "avoid"
   },
-  "bugs": {
-    "url": "https://github.com/vitebo/github-vanilla/issues"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
-  "homepage": "https://github.com/vitebo/github-vanilla#readme"
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
 }
