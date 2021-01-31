@@ -2,7 +2,6 @@ import { html, css, LitElement, property } from 'lit-element';
 
 export class BLink extends LitElement {
   static styles = css`
-
     :host {
       --b-link-text-indent: 0;
       --b-link-padding: 0;
