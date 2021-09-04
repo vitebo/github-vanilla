@@ -1,0 +1,16 @@
+:host {
+  all: initial;
+  display: block;
+}
+
+.b-list-item {
+  --font-line-height-default: var(--font-line-height-high);
+
+  display: flex;
+  align-items: center;
+  background-color: var(--color-background-primary);
+}
+
+.b-list-item:nth-child(even) {
+  background-color: var(--color-background-neutral-light);
+}

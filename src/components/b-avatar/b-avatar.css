@@ -1,0 +1,25 @@
+:host {
+  --b-avatar-size: 160px;
+
+  all: initial;
+  display: inline-block;
+}
+
+.b-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.b-avatar__image {
+  width: var(--b-avatar-size);
+  border-radius: var(--border-radius-circle);
+}
+
+.b-avatar-username {
+  --b-link-padding: var(--space-micro) var(--space-small);
+
+  margin-top: var(--space-small);
+}

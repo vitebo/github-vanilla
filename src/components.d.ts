@@ -6,6 +6,21 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface BAvatar {
+        "href": string;
+        "src": string;
+        "username": string;
+    }
+    interface BLink {
+        "href": string;
+        "target": (
+    | '_blank'
+    | '_self'
+    | '_parent'
+    | '_top'
+  );
+        "upperCase": boolean;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +37,18 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLBAvatarElement extends Components.BAvatar, HTMLStencilElement {
+    }
+    var HTMLBAvatarElement: {
+        prototype: HTMLBAvatarElement;
+        new (): HTMLBAvatarElement;
+    };
+    interface HTMLBLinkElement extends Components.BLink, HTMLStencilElement {
+    }
+    var HTMLBLinkElement: {
+        prototype: HTMLBLinkElement;
+        new (): HTMLBLinkElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +56,27 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "b-avatar": HTMLBAvatarElement;
+        "b-link": HTMLBLinkElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface BAvatar {
+        "href": string;
+        "src": string;
+        "username": string;
+    }
+    interface BLink {
+        "href": string;
+        "target"?: (
+    | '_blank'
+    | '_self'
+    | '_parent'
+    | '_top'
+  );
+        "upperCase"?: boolean;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +92,8 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "b-avatar": BAvatar;
+        "b-link": BLink;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +101,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "b-avatar": LocalJSX.BAvatar & JSXBase.HTMLAttributes<HTMLBAvatarElement>;
+            "b-link": LocalJSX.BLink & JSXBase.HTMLAttributes<HTMLBLinkElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
